@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Luckage.airportMap">
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 30, 0, 0"
+                    Android="0, 20, 0, 0"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+		<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="15"/>
+				<RowDefinition Height="6*"/>
+				<RowDefinition Height="6*"/>
+				<RowDefinition Height="6*"/>
+				<RowDefinition Height="1*"/>
+			</Grid.RowDefinitions>
+
+
+			
+			<WebView x:Name="Browser" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  Navigating="webOnNavigating" Navigated="webOnEndNavigating" BackgroundColor="Black" Grid.RowSpan="6" Grid.Row="1"/>
+			<Label x:Name="LoadingLabel" Text="Loading..." HorizontalOptions="Center" IsVisible="true" Grid.Row="4" Grid.RowSpan="2"/>
+
+
+			<Grid Grid.Row="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="8*"/>
+					<ColumnDefinition Width="10"/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="backBtn" Clicked="backBtn_Click" Grid.Column="1" Scale="1.3"  WidthRequest="25" Image="backArrow.png" VerticalOptions="Start" HorizontalOptions="Start" TextColor="White" FontSize="50"/>
+
+				<Grid Grid.Column="3">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+				    <Label x:Name="takeYourBack" Grid.Row="0" Text="Take your baggage in" TextColor="#0C1522" Font="Brandon Text Regular" FontSize="13" HorizontalTextAlignment="End"/>
+					<Label x:Name="timeLeft" Grid.Row="1" Margin="0,-5,0,0" Text="1hr 30min" TextColor="#0C1522" Font="Brandon Text Regular" FontSize="13" HorizontalTextAlignment="End"/>
+				</Grid>
+			</Grid>
+
+
+			
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

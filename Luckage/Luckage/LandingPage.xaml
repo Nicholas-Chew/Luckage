@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Luckage.LandingPage">
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 30, 0, 0"
+                    Android="0, 20, 0, 0"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="15"/>
+				<RowDefinition Height="6*"/>
+				<RowDefinition Height="4*"/>
+				<RowDefinition Height="1*"/>
+			</Grid.RowDefinitions>
+
+			<Grid Grid.Row="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="6*"/>
+					<ColumnDefinition Width="10"/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="backBtn" Clicked="backBtn_Click" Grid.Column="1"  WidthRequest="25" Image="backArrow.png" VerticalOptions="Start" HorizontalOptions="Start" TextColor="White" FontSize="50"/>
+
+				<Grid Grid.Column="3">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+				    <Label x:Name="time" Grid.Row="0" Text="1:58PM" TextColor="#0C1522" Font="Brandon Text Regular" FontSize="13" HorizontalTextAlignment="End"/>
+					<Label x:Name="location" Grid.Row="1" Margin="0,-10,0,0" Text="Singapore" TextColor="#0C1522" Font="Brandon Text Regular" FontSize="13" HorizontalTextAlignment="End"/>
+				</Grid>
+			</Grid>
+			<StackLayout Grid.Row="1">
+				<Label Grid.Row="1" x:Name="welcomeText" Text="Welcome, Nicholas" TextColor="#4a74b1" Font="Montserrat Regular" FontSize="30" VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+				<Label Grid.Row="1" x:Name="baggageArrive_Label" Text="Your baggage will arrive in" TextColor="#000000" Font="Montserrat Regular" FontSize="20" VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+			</StackLayout>
+			
+			<Grid Grid.Row="3">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<Image Grid.RowSpan="4" x:Name="bag_icon" Source="landingPage_Baggage.png"/>
+				<Label Grid.Row="1" x:Name="time_label" Text="Hours      Minutes" TextColor="#14305b" Font="Brandon Text Regular" FontSize="24" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+				<Label Grid.Row="2" x:Name="left_Time" Text="01:30" TextColor="#14305b" Font="Brandon Text Regular" FontSize="80" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+			</Grid>
+
+			<Grid Grid.Row="4">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<Button x:Name="deliveryBag" Clicked="deliveryBag_Click" Grid.Row="0" HeightRequest="50" Image="landingPage_DeliverBag.png"  HorizontalOptions="Center" TextColor="White" FontSize="50"/>
+				<Button x:Name="buySim"  Clicked="buySim_Click" Grid.Row="1" HeightRequest="50" Image="landingPage_Sim.png"  HorizontalOptions="Center" TextColor="White" FontSize="50"/>
+				<Button x:Name="checkAirport" Clicked="checkAirport_Click" Grid.Row="2" HeightRequest="50" Image="landingPage_airport.png"  HorizontalOptions="Center" TextColor="White" FontSize="50"/>
+			</Grid>
+			<Button x:Name="bagProblem" Clicked="bagProblem_Click" Grid.Row="5"  WidthRequest="280" Image="landingPage_BagProblem.png"  HorizontalOptions="Center" TextColor="White" FontSize="50"/>
+			
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

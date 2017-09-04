@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Luckage.SimCardCheckOutPage">
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 30, 0, 0"
+                    Android="0, 20, 0, 0"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+		<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="15"/>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="5*"/>
+
+			</Grid.RowDefinitions>
+
+			<Grid Grid.Row="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="8*"/>
+					<ColumnDefinition Width="10"/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="backBtn" Clicked="backBtn_Click" Grid.Column="1"  WidthRequest="25" Image="backArrow.png" VerticalOptions="Start" HorizontalOptions="Start" TextColor="White" FontSize="50"/>
+
+				<Grid Grid.Column="3">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+				    <Label x:Name="takeYourBack" Grid.Row="0" Text="Take your baggage in" TextColor="#0C1522" Font="Brandon Text Regular" FontSize="13" HorizontalTextAlignment="End"/>
+					<Label x:Name="timeLeft" Grid.Row="1" Margin="0,-5,0,0" Text="1hr 30min" TextColor="#0C1522" Font="Brandon Text Regular" FontSize="13" HorizontalTextAlignment="End"/>
+				</Grid>
+			</Grid>
+			<Label Grid.Row="1" x:Name="localSim" Text="Local Sim Card" TextColor="#4a74b1" Font="Montserrat Regular" FontSize="30" VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+
+			<Image Grid.Row="3" x:Name="simImg" Source="simPage_M1.png" Scale="1.3"/>
+			<Label Grid.Row="4" Margin="15,23,0,0" TextColor="#c3c5c9" Text="YOUR DETAILS"/>
+
+			<Grid  Grid.Row="4" Grid.RowSpan="2">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="15"/>
+				</Grid.RowDefinitions>
+				
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="18"/>
+					<ColumnDefinition Width="4*"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="18"/>
+				</Grid.ColumnDefinitions>
+
+				<Image Grid.Row="0" Grid.ColumnSpan="4" Grid.RowSpan="4" Scale="1.05" Source="simCheckOut_Box.png"/>
+				<Label Grid.Row="1" Grid.Column="1" Text="Your Full Name" VerticalTextAlignment="Center" FontSize="18" TextColor="#28518c"/>
+				<Entry x:Name="name" Grid.Row="1"  HeightRequest="50" WidthRequest="180" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Grid.Column="2" Placeholder="Your Full Name" BackgroundColor="Transparent" Margin="0,20,0,0" FontSize="18" TextColor="#2a2a2a"/>
+				
+				<Label Grid.Row="2" Grid.Column="1" Text="ID or PASSPORT" VerticalTextAlignment="Center" Margin="0,-60,0,0" FontSize="18" TextColor="#28518c"/>
+				<Entry x:Name="id" Grid.Row="2" Grid.Column="2" HeightRequest="50" WidthRequest="180" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"  Placeholder="Your ID or Passport" BackgroundColor="Transparent"  Margin="0,-10,0,0" FontSize="18" TextColor="#2a2a2a"/>
+				
+				
+				<Label Grid.Row="3" Grid.Column="1" Text="Email" VerticalTextAlignment="Start" Margin="0,-25,0,0" FontSize="18" TextColor="#28518c"/>
+				<Entry x:Name="email" Grid.Row="3" HeightRequest="50" WidthRequest="180" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"  Grid.Column="2" Placeholder="Your Email" BackgroundColor="Transparent" Margin="0,-40,0,0" FontSize="18" TextColor="#2a2a2a"/>
+				
+				<Button Grid.Row="3" Grid.RowSpan="2" Margin="0,54,0,0" Grid.ColumnSpan="4" Image="simCheckOut_checkOut.png"/>
+			</Grid>
+			
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

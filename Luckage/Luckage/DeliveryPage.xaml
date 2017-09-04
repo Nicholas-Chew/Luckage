@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Luckage.DeliveryPage">
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 30, 0, 0"
+                    Android="0, 20, 0, 0"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+		<ContentPage.Content>
+		<Grid x:Name="mainGrid">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="25"/>
+				<RowDefinition Height="8*"/>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="3*"/>
+				<RowDefinition Height="1*"/>
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="25"/>
+					<ColumnDefinition Width="6*"/>
+					<ColumnDefinition Width="1*"/>
+					<ColumnDefinition Width="10*"/>
+					<ColumnDefinition Width="25"/>
+				</Grid.ColumnDefinitions>
+
+			
+			<maps:Map x:Name="map" Grid.Row="0" Margin="0,-30,0,0"  Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="5" HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="true" />
+			
+			<Grid Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="5">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="8*"/>
+					<ColumnDefinition Width="10"/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="backBtn" Clicked="backBtn_Click" Grid.Column="1"  WidthRequest="25" Image="backArrow.png" VerticalOptions="Start" HorizontalOptions="Start" TextColor="White" FontSize="50"/>
+
+			</Grid>
+
+			<Image Grid.Row="3" Grid.ColumnSpan="5" Grid.RowSpan="7" Source="deliveryPage_Box.png"/>
+
+			<Grid Grid.Row="3" Grid.ColumnSpan="5" Margin="0,30,0,0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="5"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="5"/>
+				</Grid.ColumnDefinitions>
+
+				<Grid.RowDefinitions>
+					<RowDefinition Height="4*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="5*"/>
+				</Grid.RowDefinitions>
+
+				<Label Grid.Column="1" Grid.Row="1" x:Name="passLabel" Text="Pass" TextColor="#707070" FontSize="16" HorizontalTextAlignment="Center"/>
+				<Label Grid.Column="1" Grid.Row="2" x:Name="pass" Text="SQ 218" TextColor="#2a2a2a" FontSize="22" HorizontalTextAlignment="Center"/>
+
+				<Label Grid.Column="2" Grid.Row="1" x:Name="weightLabel" Text="Weight" TextColor="#707070" FontSize="16" HorizontalTextAlignment="Center"/>
+				<Label Grid.Column="2" Grid.Row="2" x:Name="weight" Text="25KG" TextColor="#2a2a2a" FontSize="22" HorizontalTextAlignment="Center"/>
+
+				<Label Grid.Column="3" Grid.Row="1" x:Name="typeLabel" Text="Type" TextColor="#707070" FontSize="16" HorizontalTextAlignment="Center"/>
+				<Label Grid.Column="3" Grid.Row="2" x:Name="type" Text="Single" TextColor="#2a2a2a" FontSize="22" HorizontalTextAlignment="Center"/>
+
+			</Grid>
+
+			<Label Grid.Column="1" Grid.Row="4" x:Name="Location_Label" Text="Location" TextColor="#000000" FontSize="24" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
+			<Image Grid.Column="3" Grid.Row="4" Source="problemPage_Box1.png" Margin="-15,0,0,0" HeightRequest="30" HorizontalOptions="FillAndExpand" Scale="1.32"/>	
+			<Editor Grid.Column="3" Grid.Row="4" x:Name="Location" Text="Address here "  Completed="Location_TextCompleted" TextColor="#28518c" BackgroundColor="Transparent"  HeightRequest="300" WidthRequest="1000" FontSize="12" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" />
+
+			<Label Grid.Column="1" Grid.Row="5" x:Name="deliveryType_Label" Text="Delivery" TextColor="#000000" FontSize="24" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" />
+			<Picker Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="6" x:Name="deliveryType" TextColor="#28518c" Margin="0,-10,0,0" />
+					
+			<Label Grid.Column="1" Grid.Row="7" x:Name="payment_Label" Text="Total" TextColor="#000000" FontSize="24" HorizontalTextAlignment="Start" VerticalTextAlignment="Start" />
+			<Label Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="8" x:Name="payment" Text="USD 0" TextColor="#28518c" FontSize="28" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
+	
+			
+			<Button Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="9" Image="delivery_CheckOut.png"/>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

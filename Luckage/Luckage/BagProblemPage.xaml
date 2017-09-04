@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Luckage.BagProblemPage">
+	<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 30, 0, 0"
+                    Android="0, 20, 0, 0"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
+	<ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="1*"/>
+				<RowDefinition Height="15"/>
+				<RowDefinition Height="2*"/>
+				<RowDefinition Height="4*"/>
+				<RowDefinition Height="4*"/>
+			</Grid.RowDefinitions>
+
+			<Grid Grid.Row="0">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="20"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="5*"/>
+					<ColumnDefinition Width="6*"/>
+					<ColumnDefinition Width="10"/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="backBtn" Clicked="backBtn_Click" Grid.Column="1"  WidthRequest="25" Image="backArrow.png" VerticalOptions="Start" HorizontalOptions="Start" TextColor="White" FontSize="50"/>
+
+				<Grid Grid.Column="3">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+				    <Label x:Name="time" Grid.Row="0" Text="1:58PM" TextColor="#0C1522" Font="Brandon Text Regular" FontSize="13" HorizontalTextAlignment="End"/>
+					<Label x:Name="location" Grid.Row="1" Margin="0,-10,0,0" Text="Singapore" TextColor="#0C1522" Font="Brandon Text Regular" FontSize="13" HorizontalTextAlignment="End"/>
+				</Grid>
+			</Grid>
+			
+			<Label Grid.Row="1" x:Name="baggageProblem" Text="BAGGAGE PROBLEM?" TextColor="#1e4480" Font="Montserrat Regular" FontSize="30" VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+			<Image Grid.Row="2" x:Name="siaIcon" Source="SIA_Icon.png"/>
+			
+			<StackLayout Grid.Row="4">
+				<Label x:Name="belowIcon1" Text="Do Not Worry." TextColor="#1e4480" Font="Raleway" FontSize="18" HorizontalTextAlignment="Center"/>
+				<Label x:Name="belowIcon2" Text="No matter where you are," TextColor="#1e4480" Font="Raleway" FontSize="18" HorizontalTextAlignment="Center"/>
+				<Label x:Name="belowIcon3" Text="our customer service is always ready to help." TextColor="#1e4480" Font="Raleway" FontSize="18" HorizontalTextAlignment="Center"/>
+			</StackLayout>
+
+			<Grid Grid.Row="5">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="5"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="20"/>
+				</Grid.RowDefinitions>
+
+				<Image Grid.RowSpan="3" x:Name="box1" Source="problemPage_Box1.png" HeightRequest="0"/>
+				<Grid Grid.Row="1" Grid.RowSpan="2">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="45"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="45"/>
+					</Grid.ColumnDefinitions>
+
+						<Grid.RowDefinitions>
+							<RowDefinition Height="1*"/>
+							<RowDefinition Height="4*"/>
+							<RowDefinition Height="1*"/>
+							<RowDefinition Height="1"/>
+						</Grid.RowDefinitions>
+					
+						<Label x:Name="reportProblemLabel" Grid.Row="0" Grid.Column="1" Text="Report Your Problem:" TextColor="#35445a" Font="Raleway" FontSize="12" HorizontalTextAlignment="Start"/>
+						<Image x:Name="textBoxBox" Grid.Row="1" Grid.Column="1" Source="problemPage_TextBox.png"/>
+						<Editor x:Name="problemTxtBox" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+						<Button  x:Name="sendBtn" Clicked = "sendBtn_Clicked" Grid.Row="2" Grid.Column="1" Image="problemPage_SendBtn.png"/>
+				</Grid>
+			</Grid>
+
+			<Grid Grid.Row="6">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="5"/>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="2*"/>
+					<RowDefinition Height="10"/>
+				</Grid.RowDefinitions>
+
+				<Image Grid.RowSpan="3" x:Name="box2" Source="problemPage_Box2.png" HeightRequest="0"/>
+				<Grid Grid.Row="1" Grid.RowSpan="2">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="45"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="45"/>
+					</Grid.ColumnDefinitions>
+
+					<Grid.RowDefinitions>
+						<RowDefinition Height="4*"/>
+						<RowDefinition Height="4*"/>
+						<RowDefinition Height="4*"/>
+						<RowDefinition Height="6*"/>
+						<RowDefinition Height="1"/>
+					</Grid.RowDefinitions>
+
+					<Label Grid.Row="0" Grid.Column="1" x:Name="airPortOffice" LineBreakMode="WordWrap" TextColor="#35445a" FontSize="12" VerticalTextAlignment="Center" HorizontalTextAlignment="Start">
+						<Label.Text>
+							Changi Airport Office
+						</Label.Text>
+					</Label>
+
+					<Label Grid.Row="0" Grid.Column="2" x:Name="lostandFoundOffice" LineBreakMode="WordWrap" TextColor="#35445a" FontSize="12" VerticalTextAlignment="Center" HorizontalTextAlignment="End">
+						<Label.Text>
+							Lost and Found Office
+						</Label.Text>
+					</Label>
+
+					<Label Margin="0,-20,0,0" Grid.Row="1" Grid.Column="1" x:Name="airPortOfficeContact" LineBreakMode="WordWrap" TextColor="#35445a" FontSize="12" VerticalTextAlignment="Center" FontAttributes="Bold" HorizontalTextAlignment="Start">
+						<Label.Text>
+							+657632911
+						</Label.Text>
+					</Label>
+
+					<Label Margin="0,-20,0,0" Grid.Row="1" Grid.Column="2" x:Name="lostandFoundOfficeContact" LineBreakMode="WordWrap" TextColor="#35445a" FontSize="12" VerticalTextAlignment="Center" FontAttributes="Bold" HorizontalTextAlignment="End">
+						<Label.Text>
+							+657632911
+						</Label.Text>
+					</Label>
+
+					<Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" x:Name="officeTime" Text="10am - 9pm, 7 days a week" TextColor="#a2a2a2" FontSize="12"/>
+					<Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" x:Name="officeAddress" Text="Changi Airport Terminal 2, Level 4" TextColor="#a2a2a2" FontSize="12"/>
+				</Grid>
+			</Grid>
+			
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
